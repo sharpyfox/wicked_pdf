@@ -8,6 +8,8 @@ gemfile:
   - gemfiles/3.0.gemfile
   - gemfiles/3.1.gemfile
   - gemfiles/3.2.gemfile
+before_install:
+  - ruby -e ' system( /1\.8\.\d*/.match(RUBY_VERSION)?"gem update --system 1.8.25":"gem --version" )'
 before_script: 
   - bundle list
   - sudo apt-get install -y wkhtmltopdf
